@@ -6,8 +6,60 @@ html {
 	font-size: 10px;
 }
 body {
-	background-color: rgb(20, 21, 24);
+	background-color: rgb(238, 227, 227);
+	color: black;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
 }
 .background-image {
-    width: 100vw;
+	width: 100vw;
+}
+.todo-container {
+	height: 70vh;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 40rem;
+	padding: 1.5rem;
+}
+.todo-header-container {
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+}
+.todo-header {
+	letter-spacing: 0.25rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+form {
+	background-color: #fff;
+	font-size: 1.5rem;
+	padding: 1rem 1rem;
+	border-radius: 4px;
+}
+form input {
+	width: 35rem;
+	background-color: transparent;
+	outline: none;
+	border: none;
+	font-size: 1.5rem;
+	margin-left: 1rem;
+	font-family: 'Montserrat', sans-serif;
+}
+.todo-lists {
+    margin-top: 2rem;
+}
+.new-list {
+    display: flex;
+}
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+.new-list div {
+    font-size: 1.5rem;
 }
