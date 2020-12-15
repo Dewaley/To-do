@@ -14,6 +14,7 @@ add.addEventListener('click', e => {
         alert('Please enter a task')
     }
     else {
+        /*
         let newList = document.createElement('div')
         newList.classList.add('new-list')
         let checkbox = document.createElement('input')
@@ -38,12 +39,24 @@ add.addEventListener('click', e => {
         newList.appendChild(label)
         newList.appendChild(deleteList)
         tasks.appendChild(newList)
-        
+        */
+        let newTask = `
+<div class="new-list">
+                    <input type="checkbox" name="" id="list1" class="checkbox">
+                    <label for="list1">
+                        <span class="custom-checkbox"></span>
+                        Complete online JavaScript Course
+                    </label>
+                    <span class="delete-list"><i class="fas fa-times" aria-hidden="true"></i></span>
+                </div>
+`;
+        tasks.innerHTML = newTask;
         
         input.value == ""
     }
 })
 del.addEventListener('click', e => {
-    var item = e.target.parentElement
+    var item = e.target;
     console.log(item)
+    item.closest('div').remove();
 })
