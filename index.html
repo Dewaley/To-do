@@ -20,26 +20,83 @@
         <div class="todo-header-container">
             <div class="todo-header">TODO</div>
             <div class="mode-change">
+                <i class="fas fa-moon"></i>
                 <i class="fas fa-sun"></i>
             </div>
         </div>
         <form action="" class="input-form">
-            <span class="Add"><i class="fas fa-plus"></i></span>
-            <input type="text">
+            <span class="add"><i class="fas fa-plus"></i></span>
+            <input type="text" class="input">
         </form>
         <div class="todo-lists">
-            <div class="new-list">
-                <input type="checkbox" name="" id="list1" class="checkbox">
-                <div>
-                    <span class="custom-checkbox"></span>
+            <div class="tasks">
+                <div class="new-list">
+                    <input type="checkbox" name="" id="list1" class="checkbox">
                     <label for="list1">
+                        <span class="custom-checkbox"></span>
                         Complete online JavaScript Course
                     </label>
+                    <span class="delete-list"><i class="fas fa-times"></i></span>
+                </div>
+                <div class="new-list">
+                    <input type="checkbox" name="" id="list2" class="checkbox">
+                    <label for="list2">
+                        <span class="custom-checkbox"></span>
+                        Complete online JavaScript Course
+                    </label>
+                    <span class="delete-list"><i class="fas fa-times"></i></span>
+                </div>
+                <div class="new-list">
+                    <input type="checkbox" name="" id="list3" class="checkbox">
+                    <label for="list3">
+                        <span class="custom-checkbox"></span>
+                        Complete online JavaScript Course
+                    </label>
+                    <span class="delete-list"><i class="fas fa-times"></i></span>
+                </div>
+                <div class="new-list">
+                    <input type="checkbox" name="" id="list4" class="checkbox">
+                    <label for="list4">
+                        <span class="custom-checkbox"></span>
+                        Complete online JavaScript Course
+                    </label>
+                    <span class="delete-list"><i class="fas fa-times"></i></span>
+                </div>
+                <div class="new-list">
+                    <input type="checkbox" name="" id="list5" class="checkbox">
+                    <label for="list5">
+                        <span class="custom-checkbox"></span>
+                        Complete online JavaScript Course
+                    </label>
+                    <span class="delete-list"><i class="fas fa-times"></i></span>
+                </div>
+                <div class="new-list">
+                    <input type="checkbox" name="" id="list6" class="checkbox">
+                    <label for="list6">
+                        <span class="custom-checkbox"></span>
+                        Complete online JavaScript Course
+                    </label>
+                    <span class="delete-list"><i class="fas fa-times"></i></span>
                 </div>
             </div>
+            <div class="status">
+                <div class="number-of-items">
+                    4 items left
+                </div>
+                <div class="stats">
+                    <span class="all">All</span>
+                    <span class="active">Active</span>
+                    <span class="completed">Completed</span>
+                </div>
+                <div class="clear-all">Clear Completed</div>
+            </div>
         </div>
+        
     </div>
-
+    <div class="drag-and-drop">
+        Drag and drop to reorder list
+    </div>
     <script src="https://kit.fontawesome.com/fa34fdc959.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
 </html>
