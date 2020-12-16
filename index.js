@@ -1,7 +1,7 @@
 const add = document.querySelector('.fa-plus')
 const input = document.querySelector('.input')
 const form = document.querySelector('.input-form')
-    //let tasks = document.querySelector('.tasks')
+let tasks = document.querySelector('.tasks')
 
 
 
@@ -15,7 +15,7 @@ add.addEventListener('click', e => {
     } else {
         let id = Date.now().toString()
         let newTask = `
-<div class="new-list">
+<div class="new-list" draggable="true">
     <input type="checkbox" name="" id=${id} class="checkbox">
     <label for=${id}>
         <span class="custom-checkbox"></span>
@@ -29,7 +29,6 @@ add.addEventListener('click', e => {
         let addNewField = addNewTask[addNewTask.length - 1];
         addNewField.innerHTML = newTask;
         input.value = "";
-        count()
     }
 })
 window.addEventListener('click', (e) => {
@@ -63,8 +62,8 @@ window.addEventListener('click', (e) => {
             number.textContent = num + ' items ' + 'left'
         }
     }
-    if (target.classList.contains('active')) {
-        let countChecked = document.querySelectorAll('.checkbox:checked');
-        
+    if (target.classList.contains('clear-all')) {
+        let slot = `<slot class="add-new"></slot>`
+        tasks.innerHTML = slot
     }
 })
