@@ -28,16 +28,43 @@ add.addEventListener('click', e => {
         let addNewTask = document.querySelectorAll('.add-new');
         let addNewField = addNewTask[addNewTask.length - 1];
         addNewField.innerHTML = newTask;
-
-
-
         input.value = "";
+        count()
     }
 })
-
 window.addEventListener('click', (e) => {
     let target = e.target;
     if (target.classList.contains('fa-times')) {
         target.closest('div').remove();
+    }
+    if (target.classList.contains('fa-plus')) {
+        let countChecked = document.querySelectorAll('.checkbox:checked');
+        let items = document.querySelectorAll('.new-list')
+        let number = document.querySelector('.number-of-items')
+        let num = items.length - countChecked.length
+        if (num == 0) {
+            number.textContent = '0 items left'
+        } else if (num == 1) {
+            number.textContent = '1 item left'
+        } else if (num > 1) {
+            number.textContent = num + ' items ' + 'left'
+        }
+    }
+    if (target.classList.contains('checkbox')) {
+        let countChecked = document.querySelectorAll('.checkbox:checked');
+        let items = document.querySelectorAll('.new-list')
+        let number = document.querySelector('.number-of-items')
+        let num = items.length - countChecked.length
+        if (num == 0) {
+            number.textContent = '0 items left'
+        } else if (num == 1) {
+            number.textContent = '1 item left'
+        } else if (num > 1) {
+            number.textContent = num + ' items ' + 'left'
+        }
+    }
+    if (target.classList.contains('active')) {
+        let countChecked = document.querySelectorAll('.checkbox:checked');
+        
     }
 })
