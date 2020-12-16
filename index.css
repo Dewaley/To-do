@@ -39,18 +39,8 @@ body {
 .fas {
 	cursor: pointer;
 }
-.fa-moon:hover {
-	transform: rotate(360deg);
-	transition: 350ms ease-in;
-}
-.fa-sun:hover {
-	transform: rotate(360deg);
-	transition: 350ms ease-in;
-}
 .fa-sun {
-	opacity: 0;
-	position: absolute;
-	visibility: hidden;
+	display: none !important;
 }
 form {
 	background-color: #fff;
