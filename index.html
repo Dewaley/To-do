@@ -32,11 +32,19 @@
         </form>
         <div class="todo-lists">
             <div class="tasks">
+                <div class="new-list" draggable="true">
+                    <input type="checkbox" name="" id=id class="checkbox">
+                    <label for=id>
+                        <span class="custom-checkbox"></span>
+                        Enter new task
+                    </label>
+                    <span class="delete-list"><i class="fas fa-times" aria-hidden="true"></i></span>
+                </div>
                 <slot class="add-new"></slot>
             </div>
             <div class="status">
                 <div class="number-of-items">
-                    0 items left
+                    1 item left
                 </div>
                 <div class="clear-all">Clear List</div>
             </div>
