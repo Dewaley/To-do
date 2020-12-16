@@ -1,7 +1,9 @@
 const add = document.querySelector('.fa-plus')
 const input = document.querySelector('.input')
 const form = document.querySelector('.input-form')
-let tasks = document.querySelector('.tasks')
+    //let tasks = document.querySelector('.tasks')
+
+
 
 form.addEventListener('submit', e => {
     e.preventDefault()
@@ -21,8 +23,13 @@ add.addEventListener('click', e => {
     </label>
     <span class="delete-list"><i class="fas fa-times" aria-hidden="true"></i></span>
 </div>
+<slot class="add-new"></slot>
 `;
-        tasks.innerHTML += newTask;
+        let addNewTask = document.querySelectorAll('.add-new');
+        let addNewField = addNewTask[addNewTask.length - 1];
+        addNewField.innerHTML = newTask;
+
+
 
         input.value = "";
     }
