@@ -7,7 +7,7 @@ let light = document.querySelector('.fa-sun')
 let todo = document.querySelector('.todo-lists');
 let storageName = 'taskData';
 let taskTemplate = (data) => `
-<div class="new-list" draggable="true" id="${data.arrIndex}">
+<div class="new-list" id="${data.arrIndex}">
     <input type="checkbox" name="" id=${data.id+'_'+data.arrIndex} ${data.checked ?? ''} class="checkbox">
     <label for=${data.id+'_'+data.arrIndex}>
         <span class="custom-checkbox"></span>
@@ -47,7 +47,11 @@ form.addEventListener('submit', e => {
 });
 add.addEventListener('click', e => {
     let task = input.value
-    if (task == "") {
+    if (task.length > 30) {
+        input.value = ""
+        alert("Task must have less than 30 characters")
+    }
+    else if (task == "") {
         alert('Please enter a task')
     } else {
         let id = Date.now().toString()
