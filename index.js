@@ -47,7 +47,7 @@ form.addEventListener('submit', e => {
 });
 add.addEventListener('click', e => {
     let task = input.value
-    if (task == "") {
+    if (task.trim() == "") {
         alert('Please enter a task')
     } else {
         let id = Date.now().toString()
