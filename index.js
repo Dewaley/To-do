@@ -47,11 +47,7 @@ form.addEventListener('submit', e => {
 });
 add.addEventListener('click', e => {
     let task = input.value
-    if (task.length > 30) {
-        input.value = ""
-        alert("Task must have less than 30 characters")
-    }
-    else if (task == "") {
+    if (task == "") {
         alert('Please enter a task')
     } else {
         let id = Date.now().toString()
