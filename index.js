@@ -59,8 +59,12 @@ function lightMode() {
 }
 form.addEventListener('submit', e => {
     e.preventDefault()
+    addTask()
 });
 add.addEventListener('click', e => {
+    addTask()
+})
+function addTask() {
     let task = input.value
     if (task.trim() == "") {
         alert('Please enter a task') 
@@ -77,8 +81,7 @@ add.addEventListener('click', e => {
         saveTask(newData);
         render(newTask);
     }
-})
-
+}
 function render(newTask) {
     let addNewTask = document.querySelectorAll('.add-new');
     let addNewField = addNewTask[addNewTask.length - 1];
@@ -217,5 +220,8 @@ function loadMode() {
         darkMode()
     }
 }
-window.addEventListener('DOMContentLoaded', loadTask);
-window.addEventListener('DOMContentLoaded', loadMode);
+window.addEventListener('DOMContentLoaded', e => {
+    loadTask()
+    loadMode()
+    count()
+});
