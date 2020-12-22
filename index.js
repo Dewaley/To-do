@@ -17,8 +17,23 @@ let taskTemplate = (data) => `
 </div>
 <slot class="add-new"></slot>
 `;
+let mode = "modeData"
+let base = JSON.parse(localStorage.getItem(mode))
 
 dark.addEventListener('click', e => {
+    darkMode()
+    base = []
+    base.push("dark")
+    addToModeStorage(base)
+})
+light.addEventListener('click', e => {
+    lightMode()
+    base = []
+    base.push("light")
+    addToModeStorage(base)
+})
+addToModeStorage = arr => localStorage.setItem(mode, JSON.stringify(arr));
+function darkMode() {
     light.style.opacity = "1"
     light.style.position = "relative"
     light.style.visibility = "visible"
@@ -29,8 +44,8 @@ dark.addEventListener('click', e => {
     todo.style.backgroundColor = "#1f1c1c"
     document.body.style.color = "#fff"
     input.style.color = "#fff";
-})
-light.addEventListener('click', e => {
+}
+function lightMode() {
     light.style.opacity = "0"
     light.style.position = "absolute"
     light.style.visibility = "hidden"
@@ -41,14 +56,14 @@ light.addEventListener('click', e => {
     todo.style.backgroundColor = "#fff"
     document.body.style.color = "black"
     input.style.color = "black";
-})
+}
 form.addEventListener('submit', e => {
     e.preventDefault()
 });
 add.addEventListener('click', e => {
     let task = input.value
     if (task.trim() == "") {
-        alert('Please enter a task')
+        alert('Please enter a task') 
     } else {
         let id = Date.now().toString()
         let renderData = {
@@ -195,4 +210,12 @@ function updateTaskDivId() {
     document.querySelectorAll('.new-list').forEach((item, index) => item.id = index);
 }
 
+function loadMode() {
+    if (base[0] == "light") {
+        lightMode()
+    } else if (base[0] == "dark") {
+        darkMode()
+    }
+}
 window.addEventListener('DOMContentLoaded', loadTask);
+window.addEventListener('DOMContentLoaded', loadMode);
