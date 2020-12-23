@@ -1,6 +1,7 @@
 const add = document.querySelector('.fa-plus')
 const input = document.querySelector('.input')
 const form = document.querySelector('.input-form')
+let img = document.querySelector('.background-image')
 let tasks = document.querySelector('.tasks')
 let dark = document.querySelector('.fa-moon')
 let light = document.querySelector('.fa-sun')
@@ -44,6 +45,7 @@ function darkMode() {
     todo.style.backgroundColor = "#1f1c1c"
     document.body.style.color = "#fff"
     input.style.color = "#fff";
+    img.src = 'images/bg-desktop-dark.jpg'
 }
 function lightMode() {
     light.style.opacity = "0"
@@ -56,6 +58,7 @@ function lightMode() {
     todo.style.backgroundColor = "#fff"
     document.body.style.color = "black"
     input.style.color = "black";
+    img.src = "images/bg-desktop-light.jpg"
 }
 form.addEventListener('submit', e => {
     e.preventDefault()
@@ -80,7 +83,9 @@ function addTask() {
         let newData = { value: input.value, checkState: '' };
         saveTask(newData);
         render(newTask);
+        count()
     }
+    
 }
 function render(newTask) {
     let addNewTask = document.querySelectorAll('.add-new');
@@ -98,17 +103,7 @@ window.addEventListener('click', (e) => {
         count()
     }
     if (target.classList.contains('fa-plus')) {
-        let countChecked = document.querySelectorAll('.checkbox:checked');
-        let items = document.querySelectorAll('.new-list')
-        let number = document.querySelector('.number-of-items')
-        let num = items.length - countChecked.length
-        if (num == 0) {
-            number.textContent = '0 items left'
-        } else if (num == 1) {
-            number.textContent = '1 item left'
-        } else if (num > 1) {
-            number.textContent = num + ' items ' + 'left'
-        }
+        count()
     }
     if (target.classList.contains('checkbox')) {
         count();
@@ -220,8 +215,8 @@ function loadMode() {
         darkMode()
     }
 }
-window.addEventListener('DOMContentLoaded', e => {
+window.addEventListener('DOMContentLoaded', (e) => {
     loadTask()
-    loadMode()
     count()
+    loadMode()
 });

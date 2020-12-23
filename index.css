@@ -104,7 +104,6 @@ label {
 }
 [type='checkbox']:checked + label {
 	opacity: 0.5;
-	text-decoration: line-through;
 }
 .delete-list {
 	font-size: 2rem;
