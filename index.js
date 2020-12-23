@@ -26,14 +26,19 @@ dark.addEventListener('click', e => {
     base = []
     base.push("dark")
     addToModeStorage(base)
+    reload()
 })
 light.addEventListener('click', e => {
     lightMode()
     base = []
     base.push("light")
     addToModeStorage(base)
+    reload()
 })
 addToModeStorage = arr => localStorage.setItem(mode, JSON.stringify(arr));
+function reload() {
+    location.reload()
+}
 function darkMode() {
     light.style.opacity = "1"
     light.style.position = "relative"
