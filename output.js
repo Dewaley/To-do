@@ -1,5 +1,3 @@
-"use strict";
-
 var add = document.querySelector('.fa-plus');
 var input = document.querySelector('.input');
 var form = document.querySelector('.input-form');
